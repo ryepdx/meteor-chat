@@ -1,0 +1,75 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+}
+
+div.signIn {
+  text-align: center;
+}
+
+#userBox {
+  width: 20%;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 34px;
+  overflow-y: auto;
+}
+
+#userBox ul {
+  padding-left: 0px;
+}
+
+#userBox li {
+  padding: 0px;
+  list-style: none;
+  border-top: thin solid #CCC;
+}
+
+#userBox li:first {
+  border-top: 0px;
+}
+
+#userBox li a {
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+}
+
+#userBox .profileImage {
+  margin-right: 8px;
+}
+
+#chatBox {
+  width: 80%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: 34px;
+  overflow-y: auto;
+}
+
+#chatBox p {
+  padding: 10px;
+  margin: 0px;
+}
+
+#chatBox p:nth-child(odd) {
+  background-color: #eee;
+}
+
+#entryBox {
+  position: fixed;
+  bottom: 0px;
+}
+
+.profileImage {
+  border-radius: 100%;
+  width: 32px;
+  height: 32px;
+}

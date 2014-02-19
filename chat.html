@@ -1,0 +1,53 @@
+<head>
+  <title>chat</title>
+</head>
+
+
+<template name="base">
+<body>
+    {{yield}}
+</body>
+</template>
+
+<template name="home">
+{{#unless currentUser}}
+<div class="signIn">
+    <div class="jumbotron">
+        <h1>Join the party!</h1>
+    </div>
+    {{loginButtons}}
+</div>
+{{/unless}}
+{{#if currentUser}}
+<div class="chat">
+    <div id="chatBox">
+        {{#each posts}}
+        <p>
+            <a href="{{this.author.url}}" target="_blank">
+                <img src="{{this.author.image}}" alt="{{this.author.name}}" class="profileImage">
+            </a>
+            {{this.text}}
+        </p>
+        {{/each}}
+    </div>
+    <div id="userBox">
+        <ul>
+            {{#each users}}
+            <li>
+                <a href="http://twitter.com/#!/{{this.services.twitter.screenName}}" target="_blank">
+                    <img src="{{this.services.twitter.profile_image_url}}" alt="{{this.profile.name}}" class="profileImage">
+                    {{this.profile.name}}
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+    <form id="entryBox" class="input-group">
+        <input type="text" id="entryBoxInput" class="form-control" placeholder="Introduce yourself!">
+        <div class="input-group-btn">
+            <button class="btn btn-default" type="submit">Say</button>
+        </div>
+    </form>
+</div>
+{{/if}}
+</template>
